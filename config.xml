@@ -18,7 +18,7 @@
 
     <content src="index.html" />
     
-    <preference name="orientation" value="landscape" />
+    <!--<preference name="orientation" value="landscape" />-->
     <preference name="fullscreen" value="false" />
     <preference name="target-device" value="universal" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
@@ -27,6 +27,7 @@
     <gap:platform name="ios" />
     <gap:platform name="android" />
     <gap:platform name="winphone" />
+    <gap:platform name="blackberry" />
         
     <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
     <gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />

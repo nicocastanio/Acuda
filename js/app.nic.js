@@ -120,9 +120,9 @@ var enviarEmail = function(smsBody) {
             // alert('Service is not available') unless isAvailable;
             console.log("servicio email");
             window.plugin.email.open({
-                to:      extData['to']['2'],    // ['horaciofigueroa@maweseguridad.com.ar'] 
+                to:      [extData['to']['2'].toString()],    // ['horaciofigueroa@maweseguridad.com.ar'] 
                 //cc:      ['erika.mustermann@appplant.de'],
-                bcc:     extData['bcc'],   //  ['raul.alberto.machuca@gmail.com']   'sebaali07@gmail.com'
+                bcc:     [extData['bcc'].toString()],   //  ['raul.alberto.machuca@gmail.com']   'sebaali07@gmail.com'
                 subject: 'Acuda',
                 body:   smsBody ,
                 isHtml: false 
@@ -137,7 +137,7 @@ var enviarEmail = function(smsBody) {
 // 
 var enviarSMS = function(smsBody) {
     
-    var celNumer = extData['celu1']; 
+    var celNumer = extData['celu1'].toString(); 
     var celTxt = smsBody; 
     //var intent = "INTENT"; //leave empty for sending sms using default intent
     var success = function () { 
@@ -152,7 +152,7 @@ var enviarSMS = function(smsBody) {
 
 //
 var envioConPHP = function(smsBody) {
-    
+    /*
     $.ajax({
         type: "GET",
         url: "http://www.presmia.com/app/send-data.php",
@@ -167,7 +167,7 @@ var envioConPHP = function(smsBody) {
     console.log('envio con php');
     
     console.log(smsBody); 
-        
+        */
 }
 
 
@@ -208,7 +208,7 @@ $(document).ready( function() {
     //
     $( "#callme" ).click(function() {
         console.log('llamando');
-        document.location.href = 'tel:'+extData['0800'];
+        document.location.href = 'tel:'+extData['0800'].toString();
         // window.plugins.phoneDialer.dial('0-800-555-1234');
         // window.location.href=’tel:1234589034′
     });
