@@ -18,6 +18,8 @@
 
     <content src="index.html" />
     
+    <preference name="permissions" value="none" />
+    
     <!--<preference name="orientation" value="landscape" />-->
     <preference name="fullscreen" value="false" />
     <preference name="target-device" value="universal" />
