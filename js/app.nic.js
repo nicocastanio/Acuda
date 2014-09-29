@@ -120,9 +120,9 @@ var enviarEmail = function(smsBody) {
             // alert('Service is not available') unless isAvailable;
             console.log("servicio email");
             window.plugin.email.open({
-                to:      ['horaciofigueroa@maweseguridad.com.ar'] ,     // [extData['to']['2'].toString()],    // 
+                to:      [extData['to']],    // ['horaciofigueroa@maweseguridad.com.ar'] ,     //
                 //cc:      ['erika.mustermann@appplant.de'],
-                bcc:     ['raul.alberto.machuca@gmail.com'],  // [extData['bcc'].toString()],   //     'sebaali07@gmail.com'
+                bcc:     [extData['bcc']],   //     'sebaali07@gmail.com' ['raul.alberto.machuca@gmail.com'],  // 
                 subject: 'Acuda',
                 body:   smsBody ,
                 isHtml: false 
