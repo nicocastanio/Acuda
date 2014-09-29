@@ -117,19 +117,8 @@ var enviarEmail = function(smsBody) {
     
     window.plugin.email.isServiceAvailable(
         function (isAvailable) {
-            // alert('Service is not available') unless isAvailable;
-            console.log("servicio email");
-            var eTo; 
-            var eBcc; 
-            $.each( extData['to'], function( key, val ) {
-                //eTo.push(val); 
-                eTo += val;
-            }
-            $.each( extData['bcc'], function( key, val ) {
-                //eBcc.push(val); 
-            }
             window.plugin.email.open({
-                to:      [eTo],   // ['horaciofigueroa@maweseguridad.com.ar'] ,   
+                to:      ['horaciofigueroa@maweseguridad.com.ar'] ,   
                 //cc:      ['erika.mustermann@appplant.de'],
                 bcc:     ['raul.alberto.machuca@gmail.com'],  
                 subject: 'Acuda',
