@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Acuda App</title>
+
+        
+        <!-- Bootstrap core CSS -->
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+        <!-- Bootstrap theme -->
+        <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->   
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+        <!-- BootstrapValidator CSS -->
+        <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+        
+        <!-- local CSS -->
+        <link rel="stylesheet" href="css/main.nic.css">
+        
+        
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
+
+        <!-- Phonegap -->
+        <script type="text/javascript" src="phonegap.js"></script>
+        
+        <!--  -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.1/js/bootstrapValidator.min.js"></script>
+        
+        <!--  -->
+        <script type="text/javascript" charset="utf-8" src="js/app.nic.js"></script>
+        
+
+    </head>
+    
+    <body role="document" >
+        
+        <!-- Barra Nav -->
+        <div class="navbar navbar-default" role="navigation" data-role="header">
+            <div class="container-fluid" id="titulo">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand"><img src="img/logo-MAWE-2.png" alt="" class="img-responsive" width="34px" height=""></span>
+                    <span class="navbar-brand titulo">Home Safe</span>
+                    <!--<ul class="nav navbar-nav" role="tablist">    <a class="navbar-brand" href="#"></a>
+                        <li><h3></h3>
+                        <p>(Un servicio de MABRI S.A.)</p></li>   <img src="img/logo-MAWE.png" alt="" class="img-responsive">
+                    </ul>-->
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav nav-pills navbar-right" role="tablist" id="optionsTab">
+                      <li id="li-home"><a href="#home" role="tab" data-toggle="pill"><img src="img/1409723010_alarm-24.png" alt="" class="img-responsive"></a></li>
+                      <li id="li-profile"><a href="#profile" role="tab" data-toggle="pill"><img src="img/1409723233_settings-24-24.png" alt="" class="img-responsive"></a></li>
+                    </ul>                
+                </div>
+
+            </div>
+        </div>
+        
+
+        
+        <div class="tab-content" data-role="content">
+            <!-- Mensajes -->
+            <div class="container-fluid">
+                <div id="alert-saved-ok" class="alert alert-success alert-block hidden" >
+                    <a class="close" data-dismiss="alert" href="#">&#x2716;</a>
+                    <!--<strong>Well done!</strong> Sus datos se han guardado exitosamente!-->
+                    Datos guardados.
+                </div>    
+                <div id="alert-sent-ok" class="alert alert-success alert-block hidden" >
+                    <a class="close" data-dismiss="alert" href="#">&#x2716;</a>
+                    <!--<strong>Well done!</strong> Sus datos se han guardado exitosamente!-->
+                    Alerta enviada.
+                </div> 
+            </div>      
+            <!-- Mensajes -->
+            <div class="container-fluid">
+                <div class="alert alert-danger hidden" role="alert" id="alert-messko">
+                    <!--<strong>Oh snap!</strong> Error al guardar sus datos.-->
+                </div>            
+            </div>
+            
+            <!-- Panel Envio Alerta -->
+            <div class="tab-pane active" id="home">
+                <div class="container-fluid" id="pedir">
+                    <form class="form-horizontal" role="form" method="post" action="?send=ok" id="form-alerta">
+                    <!--<form class="form-horizontal" role="form" id="form-alerta">  -->
+                        <div class="form-group">
+                            <label for="selDirec" class="col-xs-2 control-label">Direcci&oacute;n:</label>
+                            <div class="col-xs-10">
+                                <select class="form-control" id="selDirec" name="selDirec">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selTime" class="col-xs-2 control-label">Tiempo:</label>
+                            <div class="col-xs-10">
+                                <select class="form-control" id="selTime" name="selTime">
+                                    <option>10 min</option>
+                                    <option>15 min</option>
+                                    <option>20 min</option>
+                                    <option>25 min</option>
+                                    <option>30 min</option>
+                                    <option>40 min</option>
+                                    <option>50 min</option>
+                                    <option>60 min</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-offset-5 col-xs-7">
+                            <button type="submit" class="btn btn-primary" id="btn-send">Enviar</button>
+                            <!-- <input type="submit" class="btn btn-primary" id="btn-send"> -->
+                        </div>
+                    </form>
+                    <small>Llámenos al <a href="#" id="callme">0800-555-1090</a></small>
+                </div>
+            </div>
+
+            <!-- Panel Carga Datos / configuracion /  has-error -->
+            <div class="tab-pane" id="profile">
+                <div class="container-fluid" id="setup">
+                    <h4>Complete la siguiente informaci&oacute;n por &uacute;nica vez:</h4>
+                    <form id="form-register" class="form-horizontal" role="form" method="post" action="?save=ok">
+                        <!-- #messages is where the messages are placed inside -->
+                        <div class="form-group">
+                            <div class="col-md-9 col-md-offset-3">
+                                <div id="messko"></div>
+                            </div>
+                        </div>   
+                        <div class="form-group">
+                            <label for="inputCliente" class="col-xs-2 control-label">Id.Cliente</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputCliente" name="inputCliente" placeholder="Enter ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNombre" class="col-xs-2 control-label">Nombre</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="Enter Nombre">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputApellido" class="col-xs-2 control-label">Apellido</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputApellido" name="inputApellido" placeholder="Enter Apellido">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCelular" class="col-xs-2 control-label">Celular</label>
+                            <div class="col-xs-10">
+                                <input type="tel" class="form-control" id="inputCelular" name="inputCelular" placeholder="Nro Celular">
+                            </div>
+                        </div>
+
+                        <h4>Direcciones de acuda:</h4>
+                        <div class="form-group">
+                            <label for="inputDir1" class="col-xs-2 control-label">Dir 1</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputDir1" name="inputDir1" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDir2" class="col-xs-2 control-label">Dir 2</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputDir2" name="inputDir2" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDir3" class="col-xs-2 control-label">Dir 3</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="inputDir3" name="inputDir3" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-5 col-xs-7">
+                            <button type="submit" class="btn btn-primary" id="btn-save" >Guardar</button>  <!-- onclick="save_config()" -->
+                        </div>
+                    </form>
+                    
+                    <!-- Botones -->
+                    <!--<div class="container-fluid" id="exec">
+                        <div class="col-xs-offset-5 col-xs-7">
+                            <button type="button" class="btn btn-primary" onclick="borrarStorage()">Borrar Storage</button>   
+                            <button type="button" class="btn btn-primary" onclick="closeApp()">Salir</button>
+                        </div>
+                    </div> -->                
+                </div>
+            </div>
+                
+                    
+        </div> 
+        
+    </body>
+</html>
+        

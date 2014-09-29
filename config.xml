@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "ar.com.dev.accuda"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>PhoneGap Acuda</name>
+
+    <description>
+        An example for Acuda App using phonegap build . 
+    </description>
+
+    <author href="https://www.gmail.com" email="nicocastanio@gmail.com">
+        Nicolás Castaño 
+    </author>
+
+    <content src="index.html" />
+    
+    <preference name="orientation" value="landscape" />
+    <preference name="fullscreen" value="false" />
+    <preference name="target-device" value="universal" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="android-installLocation" value="auto" />
+        
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+    <gap:platform name="winphone" />
+        
+    <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
+    <gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />
+    
+    <icon src="icon.png" width="60" height="60" />
+    
+    <access origin="*" />
+
+</widget>
