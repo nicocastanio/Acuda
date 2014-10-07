@@ -99,15 +99,15 @@
             }
         }            
             
-        // - cambiar Navs cuando presionamos 
-        $('#myTab a[href="#profile"]').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        });
-        $('#myTab a[href="#home"]').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        }); 
+// - cambiar Navs cuando presionamos 
+$('#myTab a[href="#profile"]').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+});
+$('#myTab a[href="#home"]').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+}); 
             
 // 
 var enviarEmail = function(smsBody) { 
@@ -210,6 +210,18 @@ $(document).ready( function() {
         // window.plugins.phoneDialer.dial('0-800-555-1234');
         // window.location.href=’tel:1234589034′
     });
+    
+    //
+    $("#btn-close").click( function() {
+        navigator.app.exitApp();
+        if(navigator.app){
+            navigator.app.exitApp();  // solo funciona para Android 
+        }else if(navigator.device){
+            navigator.device.exitApp();
+        }        
+        console.log('cerrada');
+    }
+    );
 
     // --- submit en Formulario Envio Alerta --- 
     $("#form-alerta").submit( function( event ) {  
